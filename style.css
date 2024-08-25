@@ -652,3 +652,19 @@ body, html {
         }
     }
 </style>
+
+/* Add this CSS to your stylesheet */
+#audio-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#audio-player button {
+    background-color: #4CAF50;
