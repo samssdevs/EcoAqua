@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAqua</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+    
+    <header class="header">
+        <a href="#" class="logo">EcoAqua</a>
+
+        <nav class="navbar">
+            <a href="../html/index.html" style="--i:1;" class="active">Home</a>
+            <a href="../html/essentialelem.html" style="--i:2;">Essential Elements</a>
+            <a href="../html/essentialcompound.html" style="--i:3;">Essential Compounds</a>
+            <a href="../html/waternwatercycle.html" style="--i:4;">Water Cycle</a>
+            <a href="../html/games.html" style="--i:5;">Games</a>
+            <a href="../html/references.html" style="--i:6;">References</a>
+        </nav>
+        
+    </header>
+    
+    <section class="home">
+        <div class="home-content">
+            <h1>EcoAqua</h1>
+            <h3>Group 9</h3>
+            <p>As students, our mission is to splash some knowledge on our fellow Angelites
+            and beyond about the essential elements and compounds that make life possible, with a special spotlight on the superstar—water—and its amazing journey through the water cycle. But how can we make this HAUppend? Well, with our website, you can dive into everything you need to know about these fascinating topics we're diving into.
+            <b>EcoAqua is here to assist you in flying through these concepts with magical flying colors!</p></b>
+            <a href="#" class="btn">Group 9!</a>
+           
+        </div>
+
+        <div class="home-img">
+            <div class="rhombus">
+                <img src="../images/skibidi.png" alt="skibidi">
+            </div>
+
+            <div class="rhombus2"></div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../js/loadnavbar.js"></script>
+    <script src="../js/highlight-scale.js" defer></script>
+
+    <!-- Script to hide the loading screen after loading -->
+    <script>
+        window.addEventListener('load', function() {
+            // Start background color transition on the loading screen
+            const loadingScreen = document.querySelector('.loading-screen');
+            loadingScreen.style.transition = 'background-color 2s, opacity 1.5s';
+            loadingScreen.style.backgroundColor = '#ccffcc'; // Light green color
+            loadingScreen.style.opacity = '0'; // Fade out effect
+            
+            // After the fade-out, hide the loading screen completely
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';
+            }, 2000); // Match the duration of the background transition
+        });
+    </script>
+
+</body>
+</html>
