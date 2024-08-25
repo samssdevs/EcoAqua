@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Cycle</title>
+    <link rel="stylesheet" href="style.css"> <!-- Adjust path as necessary -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.15/build/spline-viewer.js"></script> <!-- Import Spline viewer -->
+    
+    <style>
+        /* Make the model container take up the full screen */
+        #model-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: -1; /* Sends it behind other content */
+        }
+
+        /* Ensure the Spline viewer also takes up the full screen */
+        spline-viewer {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Logo Styling */
+.logo {
+    font-size: 25px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: rgb(0, 255, 0); /* Navbar background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 10px 20px; /* Padding for spacing */
+    border-radius: 15px; /* Rounded corners for the navbar */
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #222;
+    text-decoration: none;
+    font-weight: bold; /* Make text bold */
+    margin: 0 10px; /* Reduced margin for more balanced spacing */
+    padding: 10px 20px; /* Padding for each link */
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    border-radius: 10px; /* Rounded corners for links */
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: rgb(0, 255, 0); /* Text color on hover/active */
+    background-color: white; /* Background color on hover/active */
+}
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="header">
+        <a href="#" class="logo">EcoAqua</a>
+        <nav class="navbar">
+            <a href="index.html" style="--i:1;">Home</a>
+            <a href="essentialelem.html" style="--i:2;">Essential Elements</a>
+            <a href="essentialcompound.html" style="--i:3;">Essential Compounds</a>
+            <a href="watercycle.html" style="--i:4;" class="active">Water Cycle</a>
+            <a href="games.html" style="--i:5;">Games</a>
+            <a href="references.html" style="--i:6;">References</a>
+        </nav>
+    </header>
+
+    <!-- Full-screen 3D model container -->
+    <div id="model-container">
+        <spline-viewer url="https://prod.spline.design/w8PWbG8oi7BvgZwL/scene.splinecode"></spline-viewer>
+    </div>
+    
+    <!-- Button positioned at the center bottom -->
+    <a href="watercycle.html" class="bttn">Learn More</a>
+
+    <!-- Scripts -->
+    <script src="loadnavbar.js"></script>
+    <script src="highlight-scale.js" defer></script>
+ 
+    <!-- Script to hide the loading screen after loading -->
+    <script>
+        window.addEventListener('load', function() {
+            // Start background color transition on the loading screen
+            const loadingScreen = document.querySelector('.loading-screen');
+            loadingScreen.style.transition = 'background-color 2s, opacity 1.5s';
+            loadingScreen.style.backgroundColor = '#ccffcc'; // Light green color
+            loadingScreen.style.opacity = '0'; // Fade out effect
+            
+            // After the fade-out, hide the loading screen completely
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';
+            }, 2000); // Match the duration of the background transition
+        });
+    </script>
+    
+</body>
+</html>

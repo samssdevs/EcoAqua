@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css"> <!-- Adjust path as necessary -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.15/build/spline-viewer.js"></script> <!-- Import Spline viewer -->
+
+    <style>
+        /* General Body and Header Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbars */
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-top: 2px solid #39ff14; /* Neon Green */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #39ff14; /* Neon Green */
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
+        }
+
+        /* Full-screen 3D model container */
+        #model-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: -1; /* Sends it behind other content */
+        }
+
+        spline-viewer {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Loading Screen Styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000; /* Dark background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 2s ease, visibility 2s ease; /* Smooth fade-out */
+            opacity: 1;
+            visibility: visible;
+            color: #39ff14;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
+        }
+
+        #loading-screen .spinner {
+            border: 8px solid rgba(0, 0, 0, 0.3); /* Lighter border */
+            border-top: 8px solid #39ff14; /* Neon Green top */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin-right: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Fun and creative animation for loading text */
+        #loading-screen .text {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        #loading-screen .text span {
+            display: inline-block;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Add loaded class to hide loading screen with fade effect */
+        body.loaded #loading-screen {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <div class="text" id="loading-text"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="header">
+        <a href="#" class="logo">EcoAqua</a>
+        <nav class="navbar">
+            <a href="index.html" style="--i:1;">Home</a>
+            <a href="essentialelem.html" style="--i:2;">Essential Elements</a>
+            <a href="essentialcompound.html" style="--i:3;">Essential Compounds</a>
+            <a href="waternwatercycle.html" style="--i:4;">Water Cycle</a>
+            <a href="games.html" style="--i:5;" class="active">Games</a>
+            <a href="references.html" style="--i:6;">References</a>
+        </nav>
+    </header>
+    
+    <!-- Full-screen 3D model container -->
+    <div id="model-container">
+        <spline-viewer url="https://prod.spline.design/UcGiYVmmAY31KFha/scene.splinecode"></spline-viewer>
+    </div>
+    
+    <script src="loadnavbar.js"></script>
+    <script>
+        // JavaScript to hide loading screen after 6 seconds
+        window.addEventListener('load', function() {
+            const texts = [
+                "Reflect the elements you've studied while waiting",
+                "Think about how I love copper but the c is silent",
+                "Do you like gold? But a is silent",
+                "Atmosphere? Hemisphere? Lithosphere? But losing you is my biggesphere",
+                "In the periodic table of contents, all I want is 92.",
+                "I need uranium in my lithium iron"
+            ];
+
+            const randomIndex = Math.floor(Math.random() * texts.length);
+            const loadingText = texts[randomIndex];
+
+            document.getElementById('loading-text').innerText = loadingText;
+
+            // Add class to start fade-out effect after 6 seconds
+            setTimeout(function() {
+                document.body.classList.add('loaded');
+            }, 6000); // 6000 milliseconds = 6 seconds
+        });
+    </script>
+</body>
+</html>

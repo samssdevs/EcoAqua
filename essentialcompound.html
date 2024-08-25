@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Compounds</title>
+    <link rel="stylesheet" href="style.css"> <!-- Adjust path as necessary -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        /* Highlight effect */
+        .item .des {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item .des.highlighted {
+            background-color: rgba(50, 205, 50, 0.3); /* Semi-transparent lime green */
+            transform: scale(1.1); /* Grow effect */
+            z-index: 10;
+        }
+
+        .item .des.highlighted:after {
+            content: 'Having trouble reading? Try highlighting!';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="header">
+        <a href="#" class="logo">EcoAqua</a>
+        <nav class="navbar">
+            <a href="index.html" style="--i:1;">Home</a>
+            <a href="essentialelem.html" style="--i:2;">Essential Elements</a>
+            <a href="essentialcompound.html" style="--i:3;" class="active">Essential Compounds</a>
+            <a href="waternwatercycle.html" style="--i:4;">Water Cycle</a>
+            <a href="games.html" style="--i:5;">Games</a>
+            <a href="references.html" style="--i:6;">References</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="slide">
+            <!-- Reordered Carousel items -->
+            <div class="item Carbohydrates" style="background-image: url('Carbohydrates-scaled.webp');">
+                <div class="content">
+                    <div class="name">Carbohydrates</div>
+                    <div class="des">Other than being a critical fuel source, carbohydrates are also present in very small amounts in cells’ structure. Carbohydrates help control blood, glucose, insulin, cholesterol, and triglyceride metabolism as well as fermentation.</div>
+                </div>
+            </div>
+            <div class="item Compounds" style="background-image: url('compound1.jpg');">
+                <div class="content">
+                    <div class="name">Essential Compounds</div>
+                    <div class="des"><b>Organic compounds and inorganic compounds are chemical compounds that make up the structures in cells. Organic compounds always contain Carbon and Hydrogen while inorganic compounds do not contain carbon and hydrogen together.</b></div>
+                </div>
+            </div>
+            <div class="item Compounds" style="background-image: url('lipid.jpg');">
+                <div class="content">
+                    <div class="name">Lipids</div>
+                    <div class="des"><b>A highly diverse group of fatty compounds made up mostly of hydrocarbons. They are part of our cell membranes and help control what goes in and out of our cells. They also help with absorbing vitamins, moving and storing energy, and making hormones.</b></div>
+                </div>
+            </div>
+            <div class="item Proteins" style="background-image: url('protein1.jpg');">
+                <div class="content">
+                    <div class="name">Proteins</div>
+                    <div class="des"><b>This compound is a critical component of all tissues and organs. They serve as structural support, biochemical catalysts, and initiators of cellular death. Proteins can also be hormones and enzymes.</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+            <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+
+        <!-- Side Comment -->
+        <div class="side-comment">
+            Having trouble reading? Well, you can <span class="highlight-text">HIGHLIGHT</span>
+        </div>
+    </div>
+
+    <script src="loadnavbar.js"></script>
+    <script src="script.js"></script>
+    <script src="highlight-scale.js" defer></script>
+    <script>
+        window.addEventListener('load', function() {
+            // Start background color transition on the loading screen
+            const loadingScreen = document.querySelector('.loading-screen');
+            loadingScreen.style.transition = 'background-color 2s, opacity 1.5s';
+            loadingScreen.style.backgroundColor = '#ccffcc'; // Light green color
+            loadingScreen.style.opacity = '0'; // Fade out effect
+
+            // After the fade-out, hide the loading screen completely
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';
+            }, 2000); // Match the duration of the background transition
+        });
+    </script>
+</body>
+</html>
