@@ -1,7 +1,7 @@
 // Add this JavaScript code to your JS file or inside a <script> tag
 document.addEventListener('DOMContentLoaded', () => {
     const songs = [
-        { name: "Song 1", artist: "Artist 1", file: "All I Wanna Do (Feat. Hoody & 로꼬 Loco) (Korean Version).mp3" },
+        { name: "All I Wanna Do", artist: "Jay Park Feat. Hoody & Loco", file: "All I Wanna Do (Feat. Hoody & 로꼬 Loco) (Korean Version).mp3" },
         { name: "Song 2", artist: "Artist 2", file: "song2.mp3" },
         { name: "Song 3", artist: "Artist 3", file: "song3.mp3" },
         { name: "Song 4", artist: "Artist 4", file: "song4.mp3" },
