@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     
     <!-- Loading Screen -->
@@ -27,6 +28,7 @@
             <a href="games.html" style="--i:5;">Games</a>
             <a href="references.html" style="--i:6;">References</a>
         </nav>
+        
     </header>
     
     <section class="home">
@@ -35,39 +37,34 @@
             <h3>Group 9</h3>
             <p>As students, our mission is to splash some knowledge on our fellow Angelites
             and beyond about the essential elements and compounds that make life possible, with a special spotlight on the superstar—water—and its amazing journey through the water cycle. But how can we make this HAUppend? Well, with our website, you can dive into everything you need to know about these fascinating topics we're diving into.
-            <b>EcoAqua is here to assist you in flying through these concepts with magical flying colors!</b></p>
+            <b>EcoAqua is here to assist you in flying through these concepts with magical flying colors!</p></b>
             <a href="#" class="btn">Group 9!</a>
+           
         </div>
 
         <div class="home-img">
             <div class="rhombus">
                 <img src="skibidi.png" alt="skibidi">
             </div>
-            <div class="rhombus2"></div>
-        </div>
 
-        <!-- Audio Player -->
-        <div id="audio-player">
-            <button id="play-button">Play a Random Song</button>
-            <p id="song-info"></p>
-            <audio id="audio-element" controls></audio>
-        </div>
+            <div class="rhombus2"></div>
 
     </section>
 
     <!-- Scripts -->
     <script src="loadnavbar.js"></script>
     <script src="highlight-scale.js" defer></script>
-    <script src="audioPlayer.js"></script>
-
+    
     <!-- Script to hide the loading screen after loading -->
     <script>
         window.addEventListener('load', function() {
+            // Start background color transition on the loading screen
             const loadingScreen = document.querySelector('.loading-screen');
             loadingScreen.style.transition = 'background-color 2s, opacity 1.5s';
             loadingScreen.style.backgroundColor = '#ccffcc'; // Light green color
             loadingScreen.style.opacity = '0'; // Fade out effect
             
+            // After the fade-out, hide the loading screen completely
             setTimeout(function() {
                 loadingScreen.style.display = 'none';
             }, 2000); // Match the duration of the background transition
