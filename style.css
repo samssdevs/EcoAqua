@@ -69,6 +69,7 @@ body {
 }
 
 
+
 /* Home Section Styling */
 .home {
     position: relative;
@@ -157,6 +158,76 @@ body {
     left: -250px;
     max-width: 750px;
     transform: rotate(-45deg);
+}
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    /* Header Styling */
+    .header {
+        position: static; /* Change position to static on mobile */
+        padding: 20px 5%; /* Adjust padding */
+        flex-direction: column; /* Stack logo and navbar vertically */
+        align-items: flex-start;
+        z-index: 1; /* Adjust z-index if needed */
+    }
+
+    .logo {
+        display: none; /* Hide logo on mobile */
+    }
+
+    /* Navbar Styling */
+    .navbar {
+        width: 100%;
+        background-color: rgb(0, 255, 0); /* Keep background color */
+        box-shadow: none; /* Remove shadow on mobile */
+        padding: 10px 0; /* Adjust padding for better fit */
+        border-radius: 0; /* Remove rounded corners */
+        display: flex; /* Flex display for horizontal layout */
+        justify-content: center; /* Center links */
+        flex-wrap: wrap; /* Allow wrapping */
+        border-radius: 15px; /* Rounded corners for the navbar */
+        
+    }
+
+    .navbar a {
+        font-size: 1px; /* Smaller font size for mobile */
+        margin: 5px; /* Reduced margin */
+        padding: 8px 15px; /* Adjust padding */
+    }
+
+    /* Home Section Styling */
+    .home {
+        padding: 30px 5% 0; /* Adjusted padding */
+        flex-direction: column; /* Stack content vertically */
+        text-align: center; /* Center text */
+    }
+
+    .home-content h1 {
+        font-size: 36px; /* Smaller font size for mobile */
+    }
+
+    .home-content h3 {
+        font-size: 28px; /* Smaller font size for mobile */
+    }
+
+    .home-content p {
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+
+    /* Home Image Section Styling */
+    .home-img {
+        width: 300px; /* Smaller width for mobile */
+        height: 300px; /* Smaller height for mobile */
+        right: 0; /* Align to the center */
+        transform: none; /* Remove rotation */
+    }
+
+    .home-img .rhombus {
+        border: 15px solid hsl(106, 82%, 49%); /* Adjust border for mobile */
+    }
+
+    .home-img .rhombus img {
+        left: -100px; /* Adjust image positioning */
+    }
 }
 
 /* KEYFRAMES ANIMATION */
@@ -621,34 +692,3 @@ body, html {
     line-height: 1.6; /* Increase line-height for better readability */
 }
 
-<style>
-    #loading-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: #00ff00; /* Dark background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    #loading-screen .ball {
-        width: 30px;
-        height: 30px;
-        background-color: #2b2b2b; /* Neon Green */
-        border-radius: 50%;
-        animation: bounce 1.2s infinite ease-in-out;
-    }
-
-    @keyframes bounce {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-30px);
-        }
-    }
-</style>
