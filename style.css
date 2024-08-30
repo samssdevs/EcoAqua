@@ -214,32 +214,22 @@ body {
     .home-content p {
         font-size: 16px; /* Smaller font size for mobile */
     }
+}
 
-    .home-img {
-        position: relative;
-        right: 10%;
-        width: 200px;
-        height: 2950px;
-        transform: rotate(45deg);
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+     /* Hide the rhombus for mobile */
+     .home-img .rhombus {
+        display: none;
     }
-    
-    .home-img .rhombus {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: #eaeaea;
-        border: 25px solid hsl(106, 82%, 49%);
-        box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
-    }
-    
-    .home-img .rhombus img {
-        position: absolute;
-        top: -90px;
-        left: -1100;
-        max-width: 700px;
-        transform: rotate(-45deg);
+
+    /* Hide the image for mobile */
+    .home-img img {
+        display: none; /* Hide the image */
     }
 }
+
+
 
 
 /* KEYFRAMES ANIMATION */
