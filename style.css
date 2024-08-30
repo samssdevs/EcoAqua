@@ -177,20 +177,20 @@ body {
     /* Navbar Styling */
     .navbar {
         width: 100%;
-        background-color: rgb(0, 255, 0); /* Keep background color */
+        background-color: rgb(0, 255, 0); /* Background color */
         box-shadow: none; /* Remove shadow on mobile */
         padding: 10px 0; /* Adjust padding for better fit */
         border-radius: 0; /* Remove rounded corners */
         display: flex; /* Flex display for horizontal layout */
-        justify-content: center; /* Center links */
-        flex-wrap: wrap; /* Allow wrapping */
-        border-radius: 15px; /* Rounded corners for the navbar */
-        
+        justify-content: flex-start; /* Align links to start */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Add horizontal scrollbar if needed */
+        white-space: nowrap; /* Prevent text wrapping */
     }
 
     .navbar a {
-        font-size: 1px; /* Smaller font size for mobile */
-        margin: 5px; /* Reduced margin */
+        font-size: 14px; /* Adjust font size for mobile */
+        margin: 5px; /* Adjust margin */
         padding: 8px 15px; /* Adjust padding */
     }
 
@@ -229,6 +229,7 @@ body {
         left: -100px; /* Adjust image positioning */
     }
 }
+
 
 /* KEYFRAMES ANIMATION */
 @keyframes slideRight {
