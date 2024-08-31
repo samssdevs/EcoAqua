@@ -694,3 +694,113 @@ body, html {
     line-height: 1.6; /* Increase line-height for better readability */
 }
 
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    /* Header Styling */
+    header {
+        position: static; /* Change position to static on mobile */
+        padding: 15px 5%; /* Adjust padding */
+        text-align: center; /* Center align the content */
+        z-index: 1; /* Adjust z-index if needed */
+    }
+
+    .header .logo {
+        display: none; /* Hide logo on mobile */
+    }
+
+    /* Main Content Styling */
+    main {
+        padding: 80px 10px 20px; /* Adjusted padding */
+        text-align: center; /* Center text */
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center align content */
+        flex: 1;
+        overflow: auto; /* Allow scrolling if needed */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack sections vertically */
+        width: 100%;
+        padding: 0 10px; /* Padding adjusted for mobile */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+        max-height: 80vh; /* Ensure container has a height to scroll */
+        overflow-y: auto; /* Vertical scrollbar if needed */
+    }
+
+    .reference-category {
+        background-color: #fff;
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin-bottom: 20px; /* Space between categories */
+        border-left: none; /* Remove border-left on mobile */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+        overflow: hidden; /* Ensure no extra space or hidden content */
+    }
+
+    .reference-category h2 {
+        font-size: 1.5em; /* Smaller section titles */
+        margin-bottom: 10px;
+        text-shadow: none; /* Remove shadow on mobile */
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    ul li {
+        font-size: 0.9em; /* Smaller list items */
+        margin-bottom: 10px;
+    }
+
+    /* Footer Styling */
+    footer {
+        padding: 15px 10px; /* Adjust footer padding */
+        font-size: 0.8em; /* Smaller font size in footer */
+    }
+
+    /* Scrollbar Styling */
+    .container::-webkit-scrollbar {
+        width: 12px; /* Width of the scrollbar */
+        background-color: #f0f0f0; /* Background color of the scrollbar track */
+    }
+
+    .container::-webkit-scrollbar-thumb {
+        background-color: #39ff14; /* Color of the scrollbar thumb */
+        border-radius: 6px; /* Rounded corners for the scrollbar thumb */
+    }
+
+    .container::-webkit-scrollbar-track {
+        background-color: #f0f0f0; /* Background color of the scrollbar track */
+        border-radius: 6px; /* Rounded corners for the track */
+    }
+
+    /* Firefox */
+    .container {
+        scrollbar-width: thin; /* Use 'auto' or 'thin' */
+        scrollbar-color: #39ff14 #f0f0f0; /* Thumb and track color */
+    }
+
+    /* Navbar Styling */
+    .navbar {
+        width: 100%;
+        background-color: rgb(0, 255, 0); /* Background color */
+        box-shadow: none; /* Remove shadow on mobile */
+        padding: 10px 0; /* Adjust padding for better fit */
+        border-radius: 15px; /* Rounded corners for the navbar */
+        display: flex; /* Flex display for horizontal layout */
+        justify-content: flex-start; /* Align links to start */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Add horizontal scrollbar if needed */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .navbar a {
+        font-size: 14px; /* Adjust font size for mobile */
+        margin: 5px; /* Adjust margin */
+        padding: 8px 15px; /* Adjust padding */
+    }
+}
