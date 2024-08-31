@@ -725,8 +725,6 @@ body, html {
         width: 100%;
         padding: 0 10px; /* Padding adjusted for mobile */
         box-sizing: border-box; /* Ensure padding is included in the width */
-        max-height: 80vh; /* Ensure container has a height to scroll */
-        overflow-y: auto; /* Vertical scrollbar if needed */
     }
 
     .reference-category {
@@ -760,47 +758,5 @@ body, html {
     footer {
         padding: 15px 10px; /* Adjust footer padding */
         font-size: 0.8em; /* Smaller font size in footer */
-    }
-
-    /* Scrollbar Styling */
-    .container::-webkit-scrollbar {
-        width: 12px; /* Width of the scrollbar */
-        background-color: #f0f0f0; /* Background color of the scrollbar track */
-    }
-
-    .container::-webkit-scrollbar-thumb {
-        background-color: #39ff14; /* Color of the scrollbar thumb */
-        border-radius: 6px; /* Rounded corners for the scrollbar thumb */
-    }
-
-    .container::-webkit-scrollbar-track {
-        background-color: #f0f0f0; /* Background color of the scrollbar track */
-        border-radius: 6px; /* Rounded corners for the track */
-    }
-
-    /* Firefox */
-    .container {
-        scrollbar-width: thin; /* Use 'auto' or 'thin' */
-        scrollbar-color: #39ff14 #f0f0f0; /* Thumb and track color */
-    }
-
-    /* Navbar Styling */
-    .navbar {
-        width: 100%;
-        background-color: rgb(0, 255, 0); /* Background color */
-        box-shadow: none; /* Remove shadow on mobile */
-        padding: 10px 0; /* Adjust padding for better fit */
-        border-radius: 15px; /* Rounded corners for the navbar */
-        display: flex; /* Flex display for horizontal layout */
-        justify-content: flex-start; /* Align links to start */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        overflow-x: auto; /* Add horizontal scrollbar if needed */
-        white-space: nowrap; /* Prevent text wrapping */
-    }
-
-    .navbar a {
-        font-size: 14px; /* Adjust font size for mobile */
-        margin: 5px; /* Adjust margin */
-        padding: 8px 15px; /* Adjust padding */
     }
 }
